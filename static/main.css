@@ -1,0 +1,24 @@
+body {
+  background-color: grey;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#pianoGraphics {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+#overlayCanvas {
+    pointer-events: none;
+}
+
+#pianoCanvas {
+    width: 100%;
+}

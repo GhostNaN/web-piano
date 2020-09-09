@@ -1,0 +1,19 @@
+{
+  "name": "static",
+  "version": "0.0.1",
+  "description": "A web based virtual piano",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "GhostNaN",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "soundfont-player": "^0.12.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

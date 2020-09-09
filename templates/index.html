@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Piano</title>
+    <link rel="stylesheet" href='/static/main.css' />
+</head>
+
+<body>
+    <h1>Web Piano</h1>
+
+    <h2>
+    <button id="keyboardTypeButton" type="button">Real</button>
+    <button id="showKeysButton" type="button">Show Keys</button>
+    <button id="sustainButton" type="button">Sustain On</button>
+    <select id="instrumentSelect" ></select>
+    <br>
+    </h2>
+
+    <div id="pianoGraphics">
+    <canvas id="overlayCanvas"></canvas>
+    <canvas id="pianoCanvas"></canvas>
+    </div>
+</body>
+
+<script type="text/javascript"
+         src="{{ url_for('static', filename='bundle.js') }}"></script>
+
+</html>
