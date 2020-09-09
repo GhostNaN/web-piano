@@ -299,7 +299,6 @@ function parseMidiMessage(message) {
 function setupPiano() {
 
     var canvas = document.getElementById("pianoCanvas");
-    canvas.onselectstart = function() { return false; };
     canvas.width  = canvas.offsetWidth;
     canvas.height = canvas.offsetWidth / 6;
 
@@ -337,17 +336,22 @@ window.onload = function() {
 
     window.addEventListener('resize', resizeEvent);
 
-    window.navigator.requestMIDIAccess().then(function (midiAccess) {
-        midiAccess.inputs.forEach(function (midiInput) {
-            midiInput.onmidimessage = function(event){
-                parseMidiMessage(event);
-            }
+    try {
+        window.navigator.requestMIDIAccess().then(function (midiAccess) {
+            midiAccess.inputs.forEach(function (midiInput) {
+                midiInput.onmidimessage = function(event){
+                    parseMidiMessage(event);
+                }
+            })
         })
-    })
+    }
+    catch {
+        console.error("MIDI is not supported or blocked in your browser. \nUse chromium if you wish to use MIDI.")
+    }
     // Disable accidental highlighting
     var canvas = document.getElementById("pianoCanvas");
     canvas.onselectstart = function() { return false; };
+    canvas.width  = canvas.offsetWidth;
 
-    setupPiano();
     setupPiano();
 }
